@@ -8,7 +8,9 @@
 }
 
 #element2 {
-  color: #0000FF; /*blue*/
+  /*blue*/
+  /*color: #0000FF;*/
+  color: rgb(0,0,255);
   font-size: 36px;
 }
 
