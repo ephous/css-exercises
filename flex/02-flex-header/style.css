@@ -1,22 +1,43 @@
 .header  {
+  display: flex; /*added*/
+  justify-content: space-between; /*added*/
+  align-items: center; /*added*/
   font-family: monospace;
   background: papayawhip;
 }
 
 .logo {
+  font-family:'Times New Roman', Times, serif; /*added*/
   font-size: 48px;
   font-weight: 900;
   color: tomato;
   background: white;
   padding: 4px 32px;
+  margin: 8px; /*added*/
+}
+
+/*added*/
+.left-links,.right-links  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ul {
   /* this removes the dots on the list items*/
   list-style-type: none;
+  display: flex;
+  justify-content: space-evenly; /*added*/
+  align-items: flex-end; /*added*/
+  gap: 8px; /*added*/
+
+  /*NOTE: <ul>has t/b margin of 16px (1em) and padding-left of 40px (2.5em) */
+  padding: 0px; /*added*/
+  margin: 0px; /*added*/
 }
 
 a {
+  font-family:'Times New Roman', Times, serif; /*added*/
   font-size: 22px;
   background: white;
   padding: 8px;
