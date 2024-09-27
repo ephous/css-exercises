@@ -2,9 +2,15 @@ body,
 html {
   height: 100%;
   margin: 0;
+  --div-height: 100px;
 }
 
 .container {
+  display: grid;
+  grid-template-columns: 300px 900px;
+  grid-template-rows: var(--div-height) var(--div-height) calc(5*var(--div-height)) var(--div-height);
+  gap: 15px;
+
   text-align: center;
   height: 100%;
   padding: 16px;
@@ -22,10 +28,12 @@ html {
 
 .header {
   background-color: #006157;
+  grid-column: 1 / -1;
 }
 
 .sidebar {
   background-color: #005B94;
+  grid-area: 2 / 1 / 4 / 2;
 }
 
 .nav {
@@ -38,6 +46,7 @@ html {
 
 .footer {
   background-color: #393f4d;
+  grid-column: 1 / span 2;
 }
 
 .article p {
