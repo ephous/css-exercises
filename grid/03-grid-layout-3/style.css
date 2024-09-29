@@ -4,6 +4,12 @@
 }
 
 .container {
+  /* new stuff */
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  /* next line not in grid-template-rows: 1fr 1fr 2fr 1fr; */
+  gap: 4px;
+  
   text-align: center;
 }
 
@@ -16,16 +22,62 @@
 }
 
 .header {
+  /* new stuff */
+  grid-column: 1 / -1;
+  /* not in solution: grid-row: 1 / 2; */
+  display: grid;
+  /* wrong ... grid-template-columns: 1fr 4fr;*/
+  grid-template-columns: 1fr 2fr;
+
   background-color: #393f4d;
+}
+
+/* 
+  missed this one 
+  wh/ is why header wasnt placed correctly
+*/
+.logo {
+  justify-self: start;
+}
+
+/*
+  missed this one
+  wh/ is why header items were not vertically centered
+*/
+.menu {
+  align-self: center;
+}
+
+/* new stuff */
+.menu ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .menu ul,
 .menu li {
   font-size: 16px;
+  list-style: none; /* new stuff */
 }
 
 .sidebar {
+  /*new stuff */
+  display: grid;
+  gap: 50px;
+  grid-area: 2 / 1 / 4 / 2;
+  /* rather than grid-area, solution has grid-row: 2 / 4 */
+
   background-color: #C50208;
+}
+
+/* 
+  missed this 
+  centers content
+*/
+.side-content,
+.photo {
+  display: grid;
+  align-items: center;
 }
 
 .sidebar .photo {
@@ -36,7 +88,6 @@
   border-radius: 10px;
 }
 
-
 .sidebar .side-content {
   background-color: white;
   color: black;
@@ -45,7 +96,21 @@
 }
 
 .nav {
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
   background-color: #C50208;
+}
+
+/* new stuff */
+.nav ul {
+  display: grid;
+  /* 
+    wrong - originally had four columns
+    not a huge problem...prob just a typo
+    grid-template-columns: 1fr 1fr 1fr 1fr; */
+  */
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
 }
 
 .nav ul li {
@@ -54,6 +119,14 @@
 }
 
 .article {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  
+  /*new stuff */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+
   background-color: #bccbde;
 }
 
@@ -68,12 +141,14 @@
   background-color: #FFFFFF;
   color: black;
   text-align: center;
+  height: 200px; /*new*/
 }
 
 .card p {
   color: black;
   font-weight: normal;
   font-size: 14px;
+  padding: 5px; /*missed this opne*/
 }
 
 .card .title {
@@ -82,6 +157,8 @@
 }
 
 .footer {
+  grid-column: 1 / -1;
+  /* not in solution: grid-row: 4 / 5; */
   background-color: #393f4d;
 }
 
